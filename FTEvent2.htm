@@ -1,0 +1,1106 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ft="http://www.fencingtime.com">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="en-US" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title> Live Results</title>
+    <link rel="stylesheet" href="FTStyles.css" type="text/css" />
+    <link rel="stylesheet" href="FTFlags.css" type="text/css" />
+    <link rel="stylesheet" href="jquery-ui-1.8.16.custom.css" type="text/css" />
+    <script src="jquery-1.6.2.min.js" type="text/javascript"> </script>
+    <script src="jquery-ui-1.8.16.custom.min.js" type="text/javascript"> </script>
+    <script type="text/javascript">
+          $(document).ready(function() 
+          {
+            $("#roundTabs").tabs();
+            $("#roundTabs").tabs('select', $("#roundTabs").tabs('length')-1);
+            
+            $(".roundItemTabsDiv").each(function(i)
+            {
+              var id = $(this).attr("id");
+              $("#" + id).tabs();
+              $("#" + id).tabs('select', $("#" + id).tabs('length')-1);
+            });
+
+            $(".roundName").hide();
+            $(".roundItemName").hide();
+            
+            $(".viewSelect").change(function()
+            {
+              var selIndex = $(this).prop("selectedIndex");
+              var deTable  = $(this).parent().parent().find(".elimTableau");
+              var numCols  = deTable.find("tr")[0].cells.length;
+              
+              var i = 0;
+              while(i < selIndex) {
+                var sel = "td:nth-child(" + (i+1) + ")";
+                deTable.find(sel).hide();
+                i++;
+              }
+              while(i != selIndex + 5 && i < numCols) {
+                var sel = "td:nth-child(" + (i+1) + ")";
+                deTable.find(sel).show();
+                i++;
+              }
+              while(i < numCols) {
+                var sel = "td:nth-child(" + (i+1) + ")";
+                deTable.find(sel).hide();
+                i++;
+              }
+            });
+
+
+            $(".elimTableau:not(.repApfTableau)").each(function()
+            {
+              var nCols = $(this).find("tr")[0].cells.length;
+              var j = 5;
+              while(j < nCols) {
+                $(this).find("td:nth-child(" + (j+1) + ")").hide();
+                j++;
+              }
+            });            
+          });
+        </script></head>
+  <body>
+    <div class="page">
+      <div class="pageHeader ui-corner-all">
+        <div class="leftLogo">
+          <div>
+            <a href="index.htm">
+              <img src="ftlogo.png" />
+            </a>
+          </div>
+          <div class="ftLogoText">www.FencingTime.com</div>
+          <div class="backButton navButton ui-corner-all">
+            <a href="index.htm">Return to Schedule</a>
+          </div>
+        </div>
+        <div class="tournInfo">
+          <span class="tournName">University of Michigan Homecoming Senior Open</span>
+          <br />
+          <span class="tournDetails">Senior Mixed Foil<br />Sunday, October 29, 2017 - 10:00 AM</span>
+          <br />
+          <br />
+          <span class="lastUpdate">Last Updated:   
+                  10/29/2017 - 10:48 AM</span>
+        </div>
+      </div>
+      <div id="roundTabs" class="roundTabsDiv">
+        <ul class="jumpList">
+          <li>
+            <a href="#eventFormat" class="jumpListItem1">Event Format</a>
+          </li>
+          <li>
+            <a href="#Round1" class="jumpListItem1">Round #1 - Pool</a>
+          </li>
+        </ul>
+        <div class="roundDiv" id="eventFormat">
+          <div class="roundName">Event Format</div>
+          <div class="eventFormat" xmlns="">Total # of fencers: 22</div>
+          <div class="eventFormatRound" xmlns="">
+            <span class="eventFormat eventFormatRoundName">Round #1</span>
+            <br />
+            <span class="eventFormatDetails">4 pools<br />2 pools of 5 and 2 pools of 6<br />All competitors (100%) promoted to the next round<br /></span>
+          </div>
+          <div class="eventFormatRound" xmlns="">
+            <span class="eventFormat eventFormatRoundName">Round #2</span>
+            <br />
+            <span class="eventFormatDetails">Incomplete DE table of 32 fenced through the finals, no fence-off for third<br /></span>
+          </div>
+        </div>
+        <div class="roundDiv" id="Round1">
+          <div id="round1ItemTabs" class="roundItemTabsDiv">
+            <div class="roundName">Round #1 - Pool</div>
+            <ul class="jumpList">
+              <li>
+                <a href="#Round1Seeding" class="jumpListItem2">Seeding</a>
+              </li>
+              <li>
+                <a href="#Round1StripsName" class="jumpListItem2">Strip Assignments by Name</a>
+              </li>
+              <li>
+                <a href="#Round1StripsClub" class="jumpListItem2">Strip Assignments by Club</a>
+              </li>
+              <li>
+                <a href="#Round1Scores" class="jumpListItem2">Pools</a>
+              </li>
+            </ul>
+            <div class="roundItemDiv" id="Round1Seeding">
+              <div class="roundItemName">Round Seeding</div>
+              <table class="dataTable" xmlns="">
+                <tr class="dataTableHeaderRow">
+                  <th>Seed</th>
+                  <th>Name</th>
+                  <th>Class./Rank</th>
+                  <th>Club(s)</th>
+                  <th>Division</th>
+                  <th>Country</th>
+                  <th>Status</th>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>1</td>
+                  <td>Soukar, Michael</td>
+                  <td>B16 </td>
+                  <td>UMFC / GRAFA </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>2</td>
+                  <td>Gale, Noah</td>
+                  <td>C16 </td>
+                  <td>DICE / UMFC </td>
+                  <td>Illinois </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>3</td>
+                  <td>Slade, Mycah</td>
+                  <td>C16 </td>
+                  <td>UNAT / (NONE) </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>4</td>
+                  <td>Reesman, Matthew</td>
+                  <td>D17 </td>
+                  <td>UFO </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>5</td>
+                  <td>Wu, Benjamin</td>
+                  <td>D17 </td>
+                  <td>TWORAVENS / CWRU </td>
+                  <td>Northern OH </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>6</td>
+                  <td>Maltman, Claire</td>
+                  <td>D16 </td>
+                  <td>GRAFA </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>7</td>
+                  <td>Johnson, Brendan</td>
+                  <td>D16 </td>
+                  <td> </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>8</td>
+                  <td>Svihl, Dale</td>
+                  <td>D16 </td>
+                  <td>WMFA </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>9</td>
+                  <td>Martinez-Bernal, Carlo</td>
+                  <td>D16 </td>
+                  <td>UNATTACHED </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>10</td>
+                  <td>Thelen, Isabelle</td>
+                  <td>D15 </td>
+                  <td>TSFC </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>11</td>
+                  <td>Ziyalan, Elvan</td>
+                  <td>E17 </td>
+                  <td>UMFC </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>12</td>
+                  <td>Brenner, Ellie</td>
+                  <td>E16 </td>
+                  <td>(NONE) </td>
+                  <td>San Diego </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>13</td>
+                  <td>Hedrick, Alan J R</td>
+                  <td>E15 </td>
+                  <td>UMFC </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>14</td>
+                  <td>Keene, Andrew</td>
+                  <td>U </td>
+                  <td>UMFC </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>15</td>
+                  <td>Kuhn, George</td>
+                  <td>U </td>
+                  <td>UMFC </td>
+                  <td>Virginia </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>16</td>
+                  <td>Renberg, Aaron</td>
+                  <td>U </td>
+                  <td>UMFC </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>17</td>
+                  <td>An, Jasmine</td>
+                  <td>U </td>
+                  <td>UMFC / AADS </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>18</td>
+                  <td>Jecmen, Steven</td>
+                  <td>U </td>
+                  <td>UMFC </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>19</td>
+                  <td>Yee, Mike</td>
+                  <td>U </td>
+                  <td>UMFC / UFO </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>20</td>
+                  <td>Zhang, Jianbin</td>
+                  <td>U </td>
+                  <td>MIFEC / FAP </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>21</td>
+                  <td>Zhao, Yimeng</td>
+                  <td>U </td>
+                  <td>UMFC </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>22</td>
+                  <td>Dao, Linh</td>
+                  <td>U </td>
+                  <td>MSU FC </td>
+                  <td>Michigan </td>
+                  <td>
+                    <span class="flag flagUSA">
+                      <!---->
+                    </span>USA </td>
+                  <td />
+                </tr>
+              </table>
+            </div>
+            <div class="roundItemDiv" id="Round1StripsName">
+              <div class="roundItemName">Strip Assignments by Name</div>
+              <table class="dataTable" xmlns="">
+                <tr class="dataTableHeaderRow">
+                  <th>Name</th>
+                  <th>Pool #</th>
+                  <th>Strip</th>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>An, Jasmine</td>
+                  <td>Pool #2 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>Brenner, Ellie</td>
+                  <td>Pool #4 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>Dao, Linh</td>
+                  <td>Pool #2 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>Gale, Noah</td>
+                  <td>Pool #2 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>Hedrick, Alan J R</td>
+                  <td>Pool #4 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>Jecmen, Steven</td>
+                  <td>Pool #4 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>Johnson, Brendan</td>
+                  <td>Pool #2 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>Keene, Andrew</td>
+                  <td>Pool #3 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>Kuhn, George</td>
+                  <td>Pool #1 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>Maltman, Claire</td>
+                  <td>Pool #3 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>Martinez-Bernal, Carlo</td>
+                  <td>Pool #1 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>Reesman, Matthew</td>
+                  <td>Pool #4 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>Renberg, Aaron</td>
+                  <td>Pool #1 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>Slade, Mycah</td>
+                  <td>Pool #3 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>Soukar, Michael</td>
+                  <td>Pool #1 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>Svihl, Dale</td>
+                  <td>Pool #1 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>Thelen, Isabelle</td>
+                  <td>Pool #4 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>Wu, Benjamin</td>
+                  <td>Pool #2 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>Yee, Mike</td>
+                  <td>Pool #3 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>Zhang, Jianbin</td>
+                  <td>Pool #1 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>Zhao, Yimeng</td>
+                  <td>Pool #2 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>Ziyalan, Elvan</td>
+                  <td>Pool #3 </td>
+                  <td> </td>
+                </tr>
+              </table>
+            </div>
+            <div class="roundItemDiv" id="Round1StripsClub">
+              <div class="roundItemName">Strip Assignments by Club</div>
+              <table class="dataTable" xmlns="">
+                <tr class="dataTableHeaderRow">
+                  <th>Club</th>
+                  <th>Name</th>
+                  <th>Pool #</th>
+                  <th>Strip</th>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>(none)</td>
+                  <td>Brenner, Ellie</td>
+                  <td>Pool #4 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>Allderdice</td>
+                  <td>Gale, Noah</td>
+                  <td>Pool #2 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>Grand Rapids Fencing Academy</td>
+                  <td>Maltman, Claire</td>
+                  <td>Pool #3 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>Michigan Fencing Club</td>
+                  <td>Zhang, Jianbin</td>
+                  <td>Pool #1 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>MSU fencing Club</td>
+                  <td>Dao, Linh</td>
+                  <td>Pool #2 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>Three Swords Fencing Club</td>
+                  <td>Thelen, Isabelle</td>
+                  <td>Pool #4 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>Two Ravens Fencing School</td>
+                  <td>Wu, Benjamin</td>
+                  <td>Pool #2 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>Unattached</td>
+                  <td>Martinez-Bernal, Carlo</td>
+                  <td>Pool #1 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>Underground Fencing Organization</td>
+                  <td>Reesman, Matthew</td>
+                  <td>Pool #4 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>University of Michigan Fencing Club</td>
+                  <td>An, Jasmine</td>
+                  <td>Pool #2 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>University of Michigan Fencing Club</td>
+                  <td>Hedrick, Alan J R</td>
+                  <td>Pool #4 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>University of Michigan Fencing Club</td>
+                  <td>Jecmen, Steven</td>
+                  <td>Pool #4 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>University of Michigan Fencing Club</td>
+                  <td>Keene, Andrew</td>
+                  <td>Pool #3 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>University of Michigan Fencing Club</td>
+                  <td>Kuhn, George</td>
+                  <td>Pool #1 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>University of Michigan Fencing Club</td>
+                  <td>Renberg, Aaron</td>
+                  <td>Pool #1 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>University of Michigan Fencing Club</td>
+                  <td>Soukar, Michael</td>
+                  <td>Pool #1 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>University of Michigan Fencing Club</td>
+                  <td>Yee, Mike</td>
+                  <td>Pool #3 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>University of Michigan Fencing Club</td>
+                  <td>Zhao, Yimeng</td>
+                  <td>Pool #2 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td>University of Michigan Fencing Club</td>
+                  <td>Ziyalan, Elvan</td>
+                  <td>Pool #3 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td>West Michigan Fencing Academy</td>
+                  <td>Svihl, Dale</td>
+                  <td>Pool #1 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableOddRow">
+                  <td />
+                  <td>Johnson, Brendan</td>
+                  <td>Pool #2 </td>
+                  <td> </td>
+                </tr>
+                <tr class="dataTableEvenRow">
+                  <td />
+                  <td>Slade, Mycah</td>
+                  <td>Pool #3 </td>
+                  <td> </td>
+                </tr>
+              </table>
+            </div>
+            <div class="roundItemDiv" id="Round1Scores">
+              <div class="roundItemName">Round Scores</div>
+              <div class="poolNum" xmlns="">Pool #1</div>
+              <table class="pool" xmlns="">
+                <tr class="poolHeader">
+                  <th />
+                  <th>#</th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                  <th>6</th>
+                  <th />
+                  <th>V</th>
+                  <th>V/M</th>
+                  <th>TS</th>
+                  <th>TR</th>
+                  <th>Ind</th>
+                </tr>
+                <tr class="poolOddRow">
+                  <td class="poolNameCol">Kuhn, George<br /><span class="poolAffil">UMFC / Virginia / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">1</td>
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolEvenRow">
+                  <td class="poolNameCol">Renberg, Aaron<br /><span class="poolAffil">UMFC / Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">2</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolOddRow">
+                  <td class="poolNameCol">Soukar, Michael<br /><span class="poolAffil">UMFC / Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">3</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolEvenRow">
+                  <td class="poolNameCol">Martinez-Bernal, Carlo<br /><span class="poolAffil">UNATTACHED / Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">4</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolOddRow">
+                  <td class="poolNameCol">Zhang, Jianbin<br /><span class="poolAffil">MIFEC / Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">5</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolEvenRow">
+                  <td class="poolNameCol">Svihl, Dale<br /><span class="poolAffil">WMFA / Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">6</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+              </table>
+              <br />
+              <div class="poolNum" xmlns="">Pool #2</div>
+              <table class="pool" xmlns="">
+                <tr class="poolHeader">
+                  <th />
+                  <th>#</th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                  <th>6</th>
+                  <th />
+                  <th>V</th>
+                  <th>V/M</th>
+                  <th>TS</th>
+                  <th>TR</th>
+                  <th>Ind</th>
+                </tr>
+                <tr class="poolOddRow">
+                  <td class="poolNameCol">An, Jasmine<br /><span class="poolAffil">UMFC / Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">1</td>
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolEvenRow">
+                  <td class="poolNameCol">Zhao, Yimeng<br /><span class="poolAffil">UMFC / Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">2</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolOddRow">
+                  <td class="poolNameCol">Wu, Benjamin<br /><span class="poolAffil">TWORAVENS / Northern OH / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">3</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolEvenRow">
+                  <td class="poolNameCol">Dao, Linh<br /><span class="poolAffil">MSU FC / Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">4</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolOddRow">
+                  <td class="poolNameCol">Johnson, Brendan<br /><span class="poolAffil">Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">5</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolEvenRow">
+                  <td class="poolNameCol">Gale, Noah<br /><span class="poolAffil">DICE / Illinois / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">6</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+              </table>
+              <br />
+              <div class="poolNum" xmlns="">Pool #3</div>
+              <table class="pool" xmlns="">
+                <tr class="poolHeader">
+                  <th />
+                  <th>#</th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                  <th />
+                  <th>V</th>
+                  <th>V/M</th>
+                  <th>TS</th>
+                  <th>TR</th>
+                  <th>Ind</th>
+                </tr>
+                <tr class="poolOddRow">
+                  <td class="poolNameCol">Ziyalan, Elvan<br /><span class="poolAffil">UMFC / Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">1</td>
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolEvenRow">
+                  <td class="poolNameCol">Maltman, Claire<br /><span class="poolAffil">GRAFA / Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">2</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolOddRow">
+                  <td class="poolNameCol">Keene, Andrew<br /><span class="poolAffil">UMFC / Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">3</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolEvenRow">
+                  <td class="poolNameCol">Yee, Mike<br /><span class="poolAffil">UMFC / Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">4</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolOddRow">
+                  <td class="poolNameCol">Slade, Mycah<br /><span class="poolAffil">Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">5</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+              </table>
+              <br />
+              <div class="poolNum" xmlns="">Pool #4</div>
+              <table class="pool" xmlns="">
+                <tr class="poolHeader">
+                  <th />
+                  <th>#</th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                  <th />
+                  <th>V</th>
+                  <th>V/M</th>
+                  <th>TS</th>
+                  <th>TR</th>
+                  <th>Ind</th>
+                </tr>
+                <tr class="poolOddRow">
+                  <td class="poolNameCol">Hedrick, Alan J R<br /><span class="poolAffil">UMFC / Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">1</td>
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolEvenRow">
+                  <td class="poolNameCol">Jecmen, Steven<br /><span class="poolAffil">UMFC / Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">2</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolOddRow">
+                  <td class="poolNameCol">Thelen, Isabelle<br /><span class="poolAffil">TSFC / Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">3</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolEvenRow">
+                  <td class="poolNameCol">Reesman, Matthew<br /><span class="poolAffil">UFO / Michigan / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">4</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+                <tr class="poolOddRow">
+                  <td class="poolNameCol">Brenner, Ellie<br /><span class="poolAffil">(NONE) / San Diego / <span class="flag flagUSA"><!----></span>USA</span></td>
+                  <td class="poolPosCol">5</td>
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreCol" />
+                  <td class="poolScoreFill poolScoreCol" />
+                  <td class="poolSpacerCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                  <td class="poolResultCol" />
+                </tr>
+              </table>
+              <br />
+            </div>
+          </div>
+          <div class="ncaa" xmlns="">
+        The status of National Collegiate Athletic Association Student Athletes competing in USFA tournaments during the academic year is unaffected by listing their school affiliation or as being "Unattached".  The information presented here is used solely to comply with fencing rule o.13 so that conflicts are avoided.
+      </div>
+        </div>
+      </div>
+      <div class="pageFooter">Live Results generated by Fencing Time v4.3 Tournament Software<br /><a href="http://www.fencingtime.com">www.FencingTime.com</a><br />
+            Copyright © 2017 by Fencing Time, LLC
+          </div>
+    </div>
+  </body>
+</html>
